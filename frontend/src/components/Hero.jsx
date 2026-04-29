@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Terminal } from 'lucide-react';
+import { Shield, Lock } from 'lucide-react';
+import profilePic from '../assets/profile.png';
 import './Hero.css';
 
 const roles = [
@@ -65,7 +66,7 @@ const Hero = () => {
         >
           <div className="profile-border">
             {/* The background-removed image */}
-            <img src="/src/assets/profile.png" alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/src/assets/vite.svg'} />
+            <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
           </div>
           <div className="status-badge">
             <span className="dot"></span> COMBAT PROTOCOLS ACTIVATED

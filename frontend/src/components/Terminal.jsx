@@ -34,9 +34,11 @@ const Terminal = () => {
   return (
     <section className="terminal-section">
       <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 150, scale: 0.8, rotateX: -30 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ type: "spring", stiffness: 80, damping: 15 }}
+        whileHover={{ boxShadow: "0 0 30px rgba(0, 247, 247, 0.4)" }}
         className="terminal-window"
       >
         <div className="terminal-header">

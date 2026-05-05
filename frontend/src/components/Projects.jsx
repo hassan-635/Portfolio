@@ -16,9 +16,10 @@ const Projects = () => {
   return (
     <section className="projects-section">
       <motion.h2 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, scale: 0.5, y: -50 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ type: 'spring', stiffness: 120, damping: 10 }}
         className="section-title gradient-text"
       >
         🚀 TOP PROJECTS 🚀
@@ -28,10 +29,11 @@ const Projects = () => {
         {projectsList.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.5, y: 100, rotateY: 90 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0, rotateY: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ delay: index * 0.1, duration: 0.8, type: "spring", bounce: 0.5 }}
+            whileHover={{ scale: 1.05, translateY: -10, rotateZ: index % 2 === 0 ? 2 : -2 }}
             className="project-card glass-panel"
           >
             <div className="project-icon">

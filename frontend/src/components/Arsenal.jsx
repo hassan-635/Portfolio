@@ -31,9 +31,10 @@ const Arsenal = () => {
   return (
     <section className="arsenal-section">
       <motion.h2 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, scale: 0.5, y: -50 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ type: 'spring', stiffness: 120, damping: 10 }}
         className="section-title gradient-text"
       >
         ⚔️ ARSENAL DEPLOYMENT ⚔️
@@ -43,10 +44,16 @@ const Arsenal = () => {
         {arsenalData.map((item, index) => (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2, duration: 0.8 }}
+            initial={{ opacity: 0, y: 150, rotateX: 45, scale: 0.8 }}
+            whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ 
+              delay: index * 0.15, 
+              duration: 0.8, 
+              type: "spring", 
+              bounce: 0.4 
+            }}
+            whileHover={{ scale: 1.05, translateY: -10, boxShadow: `0 0 20px ${item.color}` }}
             className="glass-panel arsenal-card"
             style={{ '--hover-color': item.color }}
           >

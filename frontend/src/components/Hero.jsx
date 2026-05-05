@@ -41,42 +41,63 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
-      <div className="hero-content">
+      <motion.div 
+        className="hero-content"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3 }
+          }
+        }}
+      >
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          variants={{
+            hidden: { opacity: 0, y: -100, scale: 0.8 },
+            visible: { 
+              opacity: 1, 
+              y: 0, 
+              scale: 1,
+              transition: { type: "spring", stiffness: 100, damping: 12, duration: 1 }
+            }
+          }}
           className="hero-header"
         >
           <h1 className="gradient-text title">AI SECURITY ENGINEER</h1>
           <h2 className="subtitle">Building The Future of Secure Systems</h2>
         </motion.div>
 
-        <div className="typing-container">
+        <motion.div 
+          className="typing-container"
+          variants={{
+            hidden: { opacity: 0, x: -100 },
+            visible: { 
+              opacity: 1, 
+              x: 0,
+              transition: { type: "spring", stiffness: 80, damping: 10 }
+            }
+          }}
+        >
           <Shield className="icon-pulse cyan" />
           <span className="typing-text">{text}<span className="cursor">|</span></span>
           <Lock className="icon-pulse purple" />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="profile-container"
-        >
-          <div className="profile-border">
-            {/* The background-removed image */}
-            <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
-          </div>
-          <div className="status-badge">
-            <span className="dot"></span> COMBAT PROTOCOLS ACTIVATED
-          </div>
         </motion.div>
+
+        {/* Profile picture has been moved to a global floating overlay in App.jsx */}
         
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          variants={{
+            hidden: { opacity: 0, y: 100, rotateX: 90 },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              rotateX: 0,
+              transition: { type: "spring", stiffness: 60, damping: 15, delay: 0.5 }
+            }
+          }}
           className="quote"
         >
           <blockquote>
@@ -84,7 +105,7 @@ const Hero = () => {
             to build secure systems that defend, adapt, and learn."
           </blockquote>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

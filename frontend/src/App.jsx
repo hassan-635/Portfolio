@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Hero from './components/Hero';
 import Arsenal from './components/Arsenal';
 import Projects from './components/Projects';
 import SkillTree from './components/SkillTree';
 import Terminal from './components/Terminal';
 import Footer from './components/Footer';
+import profilePic from './assets/profile.png';
 import './App.css';
 
 function App() {
@@ -31,8 +33,39 @@ function App() {
     };
   }, []);
 
+  const { scrollY } = useScroll();
+  
+  // Transform values for the profile picture
+  const profileScale = useTransform(scrollY, [0, 500], [1, 0.3]);
+  const profileTop = useTransform(scrollY, [0, 500], ['50%', '85%']); // Move to bottom
+  const profileLeft = useTransform(scrollY, [0, 500], ['50%', '85%']); // Move to right
+  const profileOpacity = useTransform(scrollY, [1500, 2000], [1, 0]); // Disappear
+  const profileTranslate = useTransform(scrollY, [0, 500], ['-50%, -50%', '0%, 0%']);
+
   return (
     <div className="app-container">
+      <motion.div 
+        className="floating-profile-container"
+        style={{
+          scale: profileScale,
+          top: profileTop,
+          left: profileLeft,
+          opacity: profileOpacity,
+          x: useTransform(scrollY, [0, 500], ['-50%', '0%']),
+          y: useTransform(scrollY, [0, 500], ['-50%', '0%']),
+        }}
+      >
+        <div className="profile-border">
+          <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
+        </div>
+        <motion.div 
+          className="status-badge"
+          style={{ opacity: useTransform(scrollY, [0, 200], [1, 0]) }}
+        >
+          <span className="dot"></span> COMBAT PROTOCOLS ACTIVATED
+        </motion.div>
+      </motion.div>
+
       <Hero />
       <Arsenal />
       <Projects />

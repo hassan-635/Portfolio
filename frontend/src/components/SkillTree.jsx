@@ -12,9 +12,10 @@ const SkillTree = () => {
   return (
     <section className="skill-tree-section">
       <motion.h2 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, scale: 0.5, y: -50 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ type: 'spring', stiffness: 120, damping: 10 }}
         className="section-title gradient-text"
       >
         🎮 SKILL TREE MAXED OUT 🎮
@@ -30,10 +31,11 @@ const SkillTree = () => {
             {skills.attack.map((skill, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -150, rotateY: 90 }}
+                whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                viewport={{ once: false, amount: 0.8 }}
+                transition={{ delay: index * 0.15, type: "spring", stiffness: 100, damping: 12 }}
+                whileHover={{ scale: 1.1, x: 10 }}
                 className="skill-node red-node"
               >
                 {skill}
@@ -51,10 +53,11 @@ const SkillTree = () => {
             {skills.ai.map((skill, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0, x: 150, rotateY: -90 }}
+                whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                viewport={{ once: false, amount: 0.8 }}
+                transition={{ delay: index * 0.15, type: "spring", stiffness: 100, damping: 12 }}
+                whileHover={{ scale: 1.1, x: -10 }}
                 className="skill-node purple-node"
               >
                 {skill}

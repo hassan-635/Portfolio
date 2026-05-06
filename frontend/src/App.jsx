@@ -37,10 +37,9 @@ function App() {
   
   // Transform values for the profile picture
   const profileScale = useTransform(scrollY, [0, 500], [1, 0.3]);
-  const profileTop = useTransform(scrollY, [0, 500], ['50%', '85%']); // Move to bottom
-  const profileLeft = useTransform(scrollY, [0, 500], ['50%', '85%']); // Move to right
+  const profileTop = useTransform(scrollY, [0, 500], ['20%', '85%']); // Move to bottom
+  const profileLeft = useTransform(scrollY, [0, 500], ['85%', '15%']); // Move to left
   const profileOpacity = useTransform(scrollY, [1500, 2000], [1, 0]); // Disappear
-  const profileTranslate = useTransform(scrollY, [0, 500], ['-50%, -50%', '0%, 0%']);
 
   return (
     <div className="app-container">
@@ -51,13 +50,11 @@ function App() {
           top: profileTop,
           left: profileLeft,
           opacity: profileOpacity,
-          x: useTransform(scrollY, [0, 500], ['-50%', '0%']),
-          y: useTransform(scrollY, [0, 500], ['-50%', '0%']),
+          x: useTransform(scrollY, [0, 500], ['-50%', '-50%']),
+          y: useTransform(scrollY, [0, 500], ['-50%', '-50%']),
         }}
       >
-        <div className="profile-border">
-          <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
-        </div>
+        <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
         <motion.div 
           className="status-badge"
           style={{ opacity: useTransform(scrollY, [0, 200], [1, 0]) }}

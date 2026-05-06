@@ -12,10 +12,10 @@
 
 /* This ::before approach prevents filter from affecting the child image */
 .profile-border {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
-  padding: 5px;
+  padding: 12px;
   position: relative;
 }
 

@@ -10,12 +10,36 @@
   pointer-events: none; /* Let clicks pass through to underneath */
 }
 
-.profile-image {
+/* This ::before approach prevents filter from affecting the child image */
+.profile-border {
   width: 250px;
-  height: auto;
-  max-height: 350px;
-  object-fit: contain;
-  pointer-events: auto;
+  height: 250px;
+  border-radius: 50%;
+  padding: 5px;
+  position: relative;
+}
+
+.profile-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+  animation: spin-gradient 5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes spin-gradient {
+  100% { filter: hue-rotate(360deg); }
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--bg-color); /* Fallback for transparency */
+  pointer-events: auto; /* Re-enable pointer events on the image itself if needed */
 }
 
 .status-badge {

@@ -34,27 +34,20 @@ function App() {
   }, []);
 
   const { scrollY } = useScroll();
-  
-  // Transform values for the profile picture
-  const profileScale = useTransform(scrollY, [0, 500], [1, 0.3]);
-  const profileTop = useTransform(scrollY, [0, 500], ['20%', '85%']); // Move to bottom
-  const profileLeft = useTransform(scrollY, [0, 500], ['85%', '15%']); // Move to left
-  const profileOpacity = useTransform(scrollY, [1500, 2000], [1, 0]); // Disappear
 
   return (
     <div className="app-container">
       <motion.div 
         className="floating-profile-container"
         style={{
-          scale: profileScale,
-          top: profileTop,
-          left: profileLeft,
-          opacity: profileOpacity,
-          x: useTransform(scrollY, [0, 500], ['-50%', '-50%']),
-          y: useTransform(scrollY, [0, 500], ['-50%', '-50%']),
+          top: '50%',
+          right: '5%',
+          y: '-50%',
         }}
       >
-        <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
+        <div className="profile-border">
+          <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
+        </div>
         <motion.div 
           className="status-badge"
           style={{ opacity: useTransform(scrollY, [0, 200], [1, 0]) }}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Lock } from 'lucide-react';
-import profilePic from '../assets/profile.png';
 import './Hero.css';
 
 const roles = [

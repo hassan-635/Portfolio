@@ -37,24 +37,6 @@ function App() {
 
   return (
     <div className="app-container">
-      <motion.div 
-        className="floating-profile-container"
-        style={{
-          top: '50%',
-          right: '5%',
-          y: '-50%',
-        }}
-      >
-        <div className="profile-border">
-          <img src={profilePic} alt="Hassan Ali Profile" className="profile-image" onError={(e) => e.target.src = '/vite.svg'} />
-        </div>
-        <motion.div 
-          className="status-badge"
-          style={{ opacity: useTransform(scrollY, [0, 200], [1, 0]) }}
-        >
-          <span className="dot"></span> COMBAT PROTOCOLS ACTIVATED
-        </motion.div>
-      </motion.div>
 
       <Hero />
       <Arsenal />

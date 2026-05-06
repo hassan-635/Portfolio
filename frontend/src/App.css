@@ -4,19 +4,16 @@
   position: relative;
 }
 
-.floating-profile-container {
-  position: fixed;
-  z-index: 100;
-  pointer-events: none; /* Let clicks pass through to underneath */
-}
-
 /* This ::before approach prevents filter from affecting the child image */
 .profile-border {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  padding: 12px;
+  padding: 8px; /* Slightly reduced padding so border looks thicker */
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-border::before {
@@ -24,13 +21,15 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
-  animation: spin-gradient 5s linear infinite;
+  /* Conic gradient makes rotation very obvious */
+  background: conic-gradient(from 0deg, var(--accent-cyan), transparent 30%, var(--accent-purple), transparent 70%, var(--accent-cyan));
+  animation: spin-border 3s linear infinite;
   z-index: -1;
 }
 
-@keyframes spin-gradient {
-  100% { filter: hue-rotate(360deg); }
+@keyframes spin-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .profile-image {

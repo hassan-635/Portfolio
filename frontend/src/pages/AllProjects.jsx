@@ -15,6 +15,20 @@ const AllProjects = () => {
       homepage: "https://inventory-management-frontend-lake.vercel.app"
     },
     {
+      id: 2,
+      name: "AI Calorie Counter",
+      description: "AI-powered Calorie Counter Mobile App built with React Native and MERN Stack.",
+      language: "React Native",
+      html_url: "https://github.com/hassan-635/AI-Calorie-Counter-Mobile-App"
+    },
+    {
+      id: 12,
+      name: "SecureScan Pro",
+      description: "A robust File Integrity Checker designed to ensure data security.",
+      language: "C#",
+      html_url: "https://github.com/hassan-635/SecureScan-Pro"
+    },
+    {
       id: 3,
       name: "Inventory Management (Mobile)",
       description: "The mobile application counterpart for the Inventory Management System.",

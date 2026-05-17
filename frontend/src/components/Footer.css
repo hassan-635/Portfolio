@@ -73,3 +73,22 @@
   color: #666;
   font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 3rem 1.2rem 1.5rem;
+  }
+
+  .footer-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .social-links {
+    gap: 0.8rem;
+  }
+
+  .social-btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+  }
+}

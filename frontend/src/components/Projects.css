@@ -163,3 +163,26 @@
   box-shadow: 0 8px 25px rgba(0, 247, 247, 0.6);
   filter: brightness(1.1);
 }
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.88rem;
+  }
+
+  .view-more-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}

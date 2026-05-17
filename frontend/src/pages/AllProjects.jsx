@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FolderGit2, Code, ExternalLink, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { FolderGit2, Code, ExternalLink } from 'lucide-react';
+
 import './AllProjects.css';
 
 const AllProjects = () => {
@@ -100,11 +100,7 @@ const AllProjects = () => {
 
   return (
     <div className="all-projects-page">
-      <div className="navigation-bar">
-        <Link to="/" className="back-link">
-          <ArrowLeft size={20} /> Back to Home
-        </Link>
-      </div>
+
 
       <motion.h2 
         initial={{ opacity: 0, y: -20 }}

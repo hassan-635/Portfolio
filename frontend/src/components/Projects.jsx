@@ -7,27 +7,25 @@ const Projects = () => {
   const projectsList = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with cart, checkout, and user authentication.",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
-      github_url: "https://github.com",
-      live_url: "https://example.com"
+      title: "Inventory Management System",
+      description: "A comprehensive inventory management solution featuring a web frontend and a mobile application for real-time tracking.",
+      technologies: ["JavaScript", "React", "React Native", "Supabase"],
+      github_url: "https://github.com/hassan-635/Inventory-Management-System-Frontend",
+      live_url: "https://inventory-management-frontend-lake.vercel.app"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A drag-and-drop kanban board for managing tasks and team collaboration.",
-      technologies: ["React", "Redux", "Tailwind CSS"],
-      github_url: "https://github.com",
-      live_url: "https://example.com"
+      title: "Employee Management System",
+      description: "Employee record and performance tracking system.",
+      technologies: ["C#", ".NET"],
+      github_url: "https://github.com/hassan-635/Employee-Management-System"
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Real-time weather application showing current conditions and 5-day forecast.",
-      technologies: ["JavaScript", "HTML", "CSS", "OpenWeather API"],
-      github_url: "https://github.com",
-      live_url: "https://example.com"
+      title: "ThreatPilot",
+      description: "Security and threat analysis platform.",
+      technologies: ["Cybersecurity"],
+      github_url: "https://github.com/hassan-635/ThreatPilot"
     }
   ];
 

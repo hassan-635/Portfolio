@@ -42,7 +42,8 @@
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--text-primary);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 247, 247, 0.5);
 }
 
 .nav-link::after {

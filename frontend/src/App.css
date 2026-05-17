@@ -69,3 +69,17 @@
   box-shadow: 0 0 10px #00ff00;
   animation: blink 1s infinite;
 }
+
+@media (max-width: 768px) {
+  .profile-border {
+    width: 220px;
+    height: 220px;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.75rem;
+    white-space: normal;
+    text-align: center;
+  }
+}

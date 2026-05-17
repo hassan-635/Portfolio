@@ -2,6 +2,7 @@
   overflow-x: hidden;
   width: 100%;
   position: relative;
+  padding-top: 80px;
 }
 
 /* This ::before approach prevents filter from affecting the child image */

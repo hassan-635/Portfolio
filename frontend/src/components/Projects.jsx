@@ -11,8 +11,7 @@ const Projects = () => {
       title: "Inventory Management System",
       description: "A comprehensive inventory management solution featuring a web frontend and a mobile application for real-time tracking.",
       technologies: ["JavaScript", "React", "React Native", "Supabase"],
-      github_url: "https://github.com/hassan-635/Inventory-Management-System-Frontend",
-      live_url: "https://inventory-management-frontend-lake.vercel.app"
+      github_url: "https://github.com/hassan-635/Inventory-Management-System-Frontend"
     },
     {
       id: 2,
@@ -32,7 +31,7 @@ const Projects = () => {
 
   return (
     <section className="projects-section">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, scale: 0.5, y: -50 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: false, amount: 0.5 }}
@@ -61,11 +60,11 @@ const Projects = () => {
                 </div>
               )}
             </div>
-            
+
             <div className="project-content">
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
-              
+
               {project.technologies && project.technologies.length > 0 && (
                 <div className="project-tech">
                   {project.technologies.map((tech, i) => (
@@ -73,7 +72,7 @@ const Projects = () => {
                   ))}
                 </div>
               )}
-              
+
               <div className="project-links">
                 {project.github_url && (
                   <a href={project.github_url} target="_blank" rel="noopener noreferrer" className="project-link">
@@ -87,18 +86,18 @@ const Projects = () => {
                 )}
               </div>
             </div>
-              <div className="project-hover-effect"></div>
-            </motion.div>
-          ))}
-        </div>
+            <div className="project-hover-effect"></div>
+          </motion.div>
+        ))}
+      </div>
 
-        <div className="view-more-container" style={{ textAlign: 'center', marginTop: '4rem' }}>
-          <Link to="/projects" className="view-more-btn">
-            View All Projects
-          </Link>
-        </div>
-      </section>
-    );
-  };
-  
-  export default Projects;
+      <div className="view-more-container" style={{ textAlign: 'center', marginTop: '4rem' }}>
+        <Link to="/projects" className="view-more-btn">
+          View All Projects
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

@@ -11,8 +11,7 @@ const AllProjects = () => {
       name: "Inventory Management System",
       description: "A comprehensive web and mobile frontend for real-time inventory tracking and management.",
       language: "React / Native",
-      html_url: "https://github.com/hassan-635/Inventory-Management-System-Frontend",
-      homepage: "https://inventory-management-frontend-lake.vercel.app"
+      html_url: "https://github.com/hassan-635/Inventory-Management-System-Frontend"
     },
     {
       id: 2,

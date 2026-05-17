@@ -73,3 +73,27 @@
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
 }
+
+@media (max-width: 768px) {
+  .skill-tree-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .skill-tree-container {
+    gap: 2.5rem;
+  }
+
+  .skill-branch {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .branch-header {
+    font-size: 1.1rem;
+  }
+
+  .skill-node {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}

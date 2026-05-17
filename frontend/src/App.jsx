@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Hero from './components/Hero';
-import Arsenal from './components/Arsenal';
-import Projects from './components/Projects';
-import SkillTree from './components/SkillTree';
-import Terminal from './components/Terminal';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AllProjects from './pages/AllProjects';
 import Footer from './components/Footer';
-import profilePic from './assets/profile.png';
 import './App.css';
 
 function App() {
@@ -33,18 +29,16 @@ function App() {
     };
   }, []);
 
-  const { scrollY } = useScroll();
-
   return (
-    <div className="app-container">
-
-      <Hero />
-      <Arsenal />
-      <Projects />
-      <SkillTree />
-      <Terminal />
-      <Footer />
-    </div>
+    <Router>
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<AllProjects />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

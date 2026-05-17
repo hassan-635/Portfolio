@@ -1,3 +1,4 @@
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -19,21 +20,22 @@
   font-size: 1.5rem;
   font-weight: 800;
   text-decoration: none;
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
 }
 
-.navbar-links {
+/* ===== DESKTOP NAV LINKS ===== */
+.desktop-links {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -41,7 +43,8 @@
   position: relative;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 247, 247, 0.5);
 }
@@ -53,11 +56,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -79,24 +83,147 @@
 .fiverr-btn:hover {
   background: rgba(0, 178, 45, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 178, 45, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 178, 45, 0.3);
 }
 
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background: var(--glass-bg);
+}
+
+/* ===== SIDEBAR OVERLAY ===== */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1100;
+  backdrop-filter: blur(2px);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  width: 75%;
+  max-width: 300px;
+  background: rgba(6, 11, 20, 0.97);
+  border-left: 1px solid var(--glass-border);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 2rem;
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.sidebar-brand {
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.sidebar-close:hover {
+  color: #fff;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  color: #fff;
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  text-shadow: 0 0 10px rgba(0, 247, 247, 0.4);
+}
+
+.sidebar-fiverr-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(0, 178, 45, 0.1);
+  color: #00b22d;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 178, 45, 0.3);
+  margin-top: auto;
+}
+
+.sidebar-fiverr-btn:hover {
+  background: rgba(0, 178, 45, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 178, 45, 0.3);
+}
+
+/* ===== MOBILE BREAKPOINT ===== */
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem;
+    padding: 0.85rem 1.2rem;
   }
-  
-  .navbar-links {
-    gap: 1rem;
+
+  .navbar-brand {
+    font-size: 1.25rem;
   }
-  
-  .nav-link {
-    font-size: 0.85rem;
+
+  .desktop-links {
+    display: none;
   }
-  
-  .fiverr-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

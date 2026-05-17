@@ -20,7 +20,7 @@
 </div>
 
 ## 🌐 Live Preview
-**Check out the live portfolio here:** [https://hassanaliabrar.vercel.app](https://hassanaliabrar.vercel.app)
+**Check out the live portfolio here:** [https://hassanaliabrar.vercel.app](https://hassanaliabrar.vercel.app) 
 
 ---
 

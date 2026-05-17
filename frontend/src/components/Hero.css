@@ -38,11 +38,36 @@
   .hero-content {
     flex-direction: column;
     text-align: center;
+    gap: 2.5rem;
   }
-  
+
   .hero-text-content {
     align-items: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 1.2rem 3rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .typing-container {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .quote {
+    font-size: 0.95rem;
   }
 }
 

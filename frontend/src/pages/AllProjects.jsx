@@ -15,7 +15,8 @@ const AllProjects = () => {
     fetch('https://api.github.com/users/hassan-635/repos?sort=updated&per_page=100')
       .then(res => res.json())
       .then(data => {
-        const validProjects = data.filter(repo => !repo.fork);
+        // Filter out forks and the GitHub profile README repository
+        const validProjects = data.filter(repo => !repo.fork && repo.name !== 'hassan-635');
         setProjects(validProjects);
         setLoading(false);
       })

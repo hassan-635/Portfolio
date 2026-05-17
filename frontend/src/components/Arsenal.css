@@ -90,3 +90,32 @@
 .tech-item:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .arsenal-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+  }
+
+  .arsenal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arsenal-card {
+    padding: 1.5rem;
+  }
+
+  .arsenal-card-title {
+    font-size: 1.2rem;
+  }
+
+  .tech-item {
+    font-size: 0.88rem;
+    padding: 0.65rem 1rem;
+  }
+}

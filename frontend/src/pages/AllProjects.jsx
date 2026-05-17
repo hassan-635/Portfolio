@@ -7,10 +7,10 @@ import './AllProjects.css';
 const AllProjects = () => {
   const projects = [
     {
-      id: 2,
-      name: "Inventory Management (Web)",
-      description: "A comprehensive web frontend for real-time inventory tracking and management.",
-      language: "React",
+      id: 1,
+      name: "Inventory Management System",
+      description: "A comprehensive web and mobile frontend for real-time inventory tracking and management.",
+      language: "React / Native",
       html_url: "https://github.com/hassan-635/Inventory-Management-System-Frontend",
       homepage: "https://inventory-management-frontend-lake.vercel.app"
     },
@@ -24,16 +24,58 @@ const AllProjects = () => {
     {
       id: 4,
       name: "ThreatPilot",
-      description: "A robust cybersecurity and threat analysis platform.",
+      description: "A cybersecurity and threat analysis platform.",
       language: "Cybersecurity",
       html_url: "https://github.com/hassan-635/ThreatPilot"
     },
     {
       id: 5,
+      name: "Phone OSINT",
+      description: "An Open-Source Intelligence tool for phone number analysis and reconnaissance.",
+      language: "Python",
+      html_url: "https://github.com/hassan-635/Phone-OSINT"
+    },
+    {
+      id: 6,
+      name: "Linux Security Scanner",
+      description: "A security vulnerability scanner specifically designed for Linux systems.",
+      language: "Python",
+      html_url: "https://github.com/hassan-635/Linux-Security-Scanner"
+    },
+    {
+      id: 7,
+      name: "REST API Rate Limiter",
+      description: "A custom rate limiter implementation for securing and optimizing REST APIs.",
+      language: "Python",
+      html_url: "https://github.com/hassan-635/REST-API-Rate-Limiter"
+    },
+    {
+      id: 8,
       name: "Employee Management System",
       description: "Employee record and performance tracking system with complete CRUD operations.",
       language: "C# .NET",
       html_url: "https://github.com/hassan-635/Employee-Management-System"
+    },
+    {
+      id: 9,
+      name: "SentimentChat",
+      description: "A chat application integrating sentiment analysis features.",
+      language: "HTML / JS",
+      html_url: "https://github.com/hassan-635/SentimentChat"
+    },
+    {
+      id: 10,
+      name: "Brick Breaker Game",
+      description: "A classic Brick Breaker game developed using the C++ Graphics Library.",
+      language: "C++",
+      html_url: "https://github.com/hassan-635/Brick-Breaker-Game-using-CPP-Graphics-Library-"
+    },
+    {
+      id: 11,
+      name: "MPFL Platform",
+      description: "Full-stack Freelancing platform with a web frontend, mobile app, and backend infrastructure for secure file sharing.",
+      language: "React / Node",
+      html_url: "https://github.com/hassan-635/MPFL_Frontend_web"
     }
   ];
 

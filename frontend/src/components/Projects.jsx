@@ -93,18 +93,7 @@ const Projects = () => {
         </div>
 
         <div className="view-more-container" style={{ textAlign: 'center', marginTop: '4rem' }}>
-          <Link to="/projects" className="view-more-btn" style={{
-            display: 'inline-block',
-            padding: '1rem 2.5rem',
-            background: 'linear-gradient(90deg, var(--accent-blue), var(--accent-purple))',
-            color: 'white',
-            textDecoration: 'none',
-            borderRadius: '30px',
-            fontWeight: 'bold',
-            fontSize: '1.1rem',
-            transition: 'all 0.3s ease',
-            boxShadow: '0 4px 15px rgba(168, 85, 247, 0.4)'
-          }}>
+          <Link to="/projects" className="view-more-btn">
             View All Projects
           </Link>
         </div>
